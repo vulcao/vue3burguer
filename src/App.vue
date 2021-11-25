@@ -29,8 +29,10 @@ export default {
   box-sizing: border-box;
 }
 .main-container {
-  margin: 50px;
-  min-height: 250px;
+  margin: 50px 0;
+  width: 100%;
+  min-height: calc(100vh - 380px);
+      box-sizing: border-box;
 }
 h1 {
   text-align: center;
