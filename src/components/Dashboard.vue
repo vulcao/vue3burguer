@@ -94,8 +94,9 @@ export default{
                 headers: { "Content-Type": "application/json" },
                 body: dataJson
             });
+            const res = await req.json();
             // mensagem
-            this.msg = `Pedido nº ${id} foi alterado`;
+            this.msg = `Pedido nº ${id} foi alterado para "${res.status}"`;
             this.msgTipo = "verde"
             setTimeout(() => this.msg = "",3000);
             // recarrega lista

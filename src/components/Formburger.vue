@@ -1,6 +1,6 @@
 <template>
     <div id="main-container">
-        <Message :mensagem="msg" v-show="msg" />
+        <Message :mensagem="msg" :tipo="msgTipo"  v-show="msg" />
         <div>
             <form id="burger-form" @submit="createBurger">
                 <div class="input-container">
@@ -68,7 +68,8 @@ export default {
             pao: null,
             carne: null,
             opcionais: [],
-            msg: null
+            msg: null,
+            msgTipo: null
         }
     },
     methods: {
@@ -97,9 +98,9 @@ export default {
             body: datajson
             });
             const res = await req.json();
-            console.log(res);
             // mensagem
             this.msg = `Pedido nº ${res.id} realizado com sucesso!`;
+            this.msgTipo = "azul"
             setTimeout(() => this.msg = "",3000);
             // limpa formulario
             this.nome = "";
